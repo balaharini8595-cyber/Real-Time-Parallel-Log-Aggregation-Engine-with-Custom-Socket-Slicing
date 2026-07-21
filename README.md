@@ -1,4 +1,5 @@
 ReadMe Content:
+WEEK -1:
 Real-Time Parallel Log Aggregation Engine with Custom Socket Slicing
 
  Project Overview
@@ -196,5 +197,230 @@ python client.py
 The Real-Time Parallel Log Aggregation Engine with Custom Socket Slicing provides an efficient solution for collecting and processing logs from multiple 
 clients simultaneously. By combining socket programming with multithreading and custom packet slicing, the system ensures reliable, scalable, and real-time 
 log aggregation suitable for modern distributed environments.
+
+
+WEEK -2:
+ MapReduce Engine – Online Games Data Analysis
+
+ Project Overview
+
+This project implements a simplified **MapReduce Engine** in Python to analyze online gaming data. The engine follows the MapReduce programming model by splitting large datasets into smaller chunks, processing them in parallel using mapper functions, grouping similar records through partitioning and sorting, and finally producing summarized results using reducers.
+The project demonstrates how distributed data processing can efficiently analyze online game records such as game names, player activities, or event occurrences.
+
+Project Objective
+
+The primary objective of this project is to design and implement a basic MapReduce Engine capable of processing online gaming datasets efficiently. The engine simulates the workflow of distributed computing systems by dividing tasks into multiple stages and executing them independently before combining the final results.
+
+ Problem Statement
+
+Online gaming platforms generate millions of records every day. Processing these records sequentially is time-consuming. This project solves the problem by implementing a MapReduce Engine that processes the dataset in parallel and calculates the frequency of each online game in the dataset.
+
+Example Input
+
+```
+PUBG
+Free Fire
+Valorant
+PUBG
+Minecraft
+Valorant
+PUBG
+BGMI
+Minecraft
+```
+
+Expected Output
+
+```
+PUBG 3
+Valorant 2
+Minecraft 2
+Free Fire 1
+BGMI 1
+```
+ Project Workflow
+
+The MapReduce Engine performs the following stages:
+
+1. Read the input dataset.
+2. Split the dataset into smaller chunks.
+3. Execute multiple mapper processes.
+4. Generate intermediate key-value pairs.
+5. Partition mapper outputs using hash partitioning.
+6. Sort partition files.
+7. Reduce grouped records.
+8. Generate the final output.
+
+ Features
+
+- Parallel processing using MapReduce concepts
+- Automatic input splitting
+- Mapper generation of key-value pairs
+- Hash-based partitioning
+- Sorting intermediate data
+- Reduction of duplicate keys
+- Final aggregated output generation
+- Modular Python implementation
+
+ Project Structure
+
+```
+MapReduce/
+│
+├── master.py
+├── splitter.py
+├── mapper.py
+├── partitioner.py
+├── sorter.py
+├── reducer.py
+├── input.txt
+├── requirements.txt
+├── README.md
+├── partitions/
+└── output/
+```
+
+ Module Description
+
+ master.py
+
+Controls the complete execution of the MapReduce Engine by calling every module in sequence.
+
+ splitter.py
+
+Splits the input dataset into equal chunks for multiple mapper processes.
+
+ mapper.py
+
+Reads each chunk and converts every game record into an intermediate key-value pair.
+
+Example
+
+```
+PUBG
+```
+
+becomes
+
+```
+(PUBG,1)
+```
+
+ partitioner.py
+
+Uses the hash function
+
+```
+hash(key) % number_of_reducers
+```
+
+to assign each game to the appropriate reducer.
+
+---
+
+ sorter.py
+
+Sorts partition files alphabetically so identical game names appear together.
+
+---
+
+ reducer.py
+
+Groups identical game names and calculates their total occurrences.
+
+Example
+
+```
+PUBG
+1
+1
+1
+```
+
+Output
+
+```
+PUBG 3
+```
+
+Technologies Used
+
+- Python 3
+- File Handling
+- Hash Partitioning
+- Sorting Algorithms
+- MapReduce Programming Model
+
+ Installation
+
+Install Python 3.
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Execution
+
+Run the project using:
+
+```bash
+python master.py
+```
+
+ Sample Input
+
+```
+PUBG
+Free Fire
+Valorant
+PUBG
+Minecraft
+Valorant
+PUBG
+BGMI
+Minecraft
+```
+
+ Sample Output
+
+```
+PUBG 3
+Valorant 2
+Minecraft 2
+Free Fire 1
+BGMI 1
+```
+
+ Applications
+
+- Online game popularity analysis
+- Player activity monitoring
+- Event log analysis
+- Gaming statistics generation
+- Large-scale gaming data processing
+- Distributed analytics systems
+
+ Advantages
+
+- Faster processing through parallel execution
+- Scalable architecture
+- Efficient handling of large datasets
+- Easy to modify for different datasets
+- Modular and reusable design
+- Demonstrates distributed computing concepts
+
+ Future Enhancements
+
+- Support multiple reducers dynamically
+- Process larger real-time gaming datasets
+- Add graphical visualization of results
+- Integrate with Hadoop or Apache Spark
+- Implement multiprocessing for better performance
+
+ Conclusion
+
+This project successfully demonstrates the implementation of a MapReduce Engine for analyzing online game datasets. The engine efficiently processes large amounts of gaming data by splitting the input, generating intermediate key-value pairs, partitioning and sorting the records, and reducing them to produce accurate game occurrence counts. The modular design allows the engine to be extended for various big data applications beyond online gaming.
 
 
