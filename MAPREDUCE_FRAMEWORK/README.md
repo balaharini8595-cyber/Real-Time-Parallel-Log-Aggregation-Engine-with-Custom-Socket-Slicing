@@ -1,12 +1,10 @@
-# Mini MapReduce Framework for Online Games Analysis
+ Mini MapReduce Framework for Online Games Analysis
 
-## Project Title
+ Project Title
 
 Mini MapReduce Framework for Online Games Genre Analysis using Python
 
----
-
-## Project Description
+ Project Description
 
 This project implements a simplified MapReduce Framework using Python to analyze an Online Games dataset. The framework processes player records and counts the number of players in each game genre.
 
@@ -20,9 +18,7 @@ The project demonstrates the four major phases of the MapReduce model:
 
 The implementation uses Python file handling and multiprocessing concepts.
 
----
-
-## Objectives
+ Objectives
 
 - Understand the MapReduce programming model.
 - Process game datasets efficiently.
@@ -30,9 +26,7 @@ The implementation uses Python file handling and multiprocessing concepts.
 - Learn data partitioning techniques.
 - Understand reducer aggregation.
 
----
-
-## Technologies Used
+ Technologies Used
 
 - Python 3
 - Multiprocessing
@@ -40,9 +34,7 @@ The implementation uses Python file handling and multiprocessing concepts.
 - Hash Partitioning
 - Collections Module
 
----
-
-## Folder Structure
+Folder Structure
 
 ```
 MapReduce_Framework
@@ -68,9 +60,7 @@ MapReduce_Framework
 └── README.md
 ```
 
----
-
-## Dataset Information
+ Dataset Information
 
 The input dataset contains Online Game player information.
 
@@ -89,9 +79,7 @@ Example
 1001,Arun,PUBG,Battle Royale,5,India
 ```
 
----
-
-## Project Workflow
+ Project Workflow
 
 ```
 Input File
@@ -121,15 +109,13 @@ Input File
  Final Output
 ```
 
----
+ Module Description
 
-## Module Description
-
-### splitter.py
+ splitter.py
 
 Splits the input dataset into equal chunks.
 
-### mapper.py
+ mapper.py
 
 Reads each record and extracts the Game Genre.
 
@@ -141,7 +127,7 @@ FPS → (FPS,1)
 Sandbox → (Sandbox,1)
 ```
 
-### partitioner.py
+partitioner.py
 
 Distributes mapper outputs into multiple partition files using Hash Partitioning.
 
@@ -151,21 +137,19 @@ Formula
 hash(key) % number_of_reducers
 ```
 
-### sorter.py
+sorter.py
 
 Sorts each partition file alphabetically before reducing.
 
-### reducer.py
+ reducer.py
 
 Counts all occurrences of each game genre.
 
-### master.py
+ master.py
 
 Controls the complete MapReduce execution process.
 
----
-
-## Sample Output
+ Sample Output
 
 ```
 Genre,Players
@@ -178,9 +162,7 @@ Sports,10
 Strategy,9
 ```
 
----
-
-## Advantages
+ Advantages
 
 - Easy to understand
 - Demonstrates distributed computing concepts
@@ -188,9 +170,7 @@ Strategy,9
 - Supports large datasets
 - Easy to extend
 
----
-
-## Applications
+Applications
 
 - Online Gaming Analytics
 - Big Data Processing
@@ -200,9 +180,7 @@ Strategy,9
 - Data Mining
 - Hadoop Learning
 
----
-
-## Future Enhancements
+ Future Enhancements
 
 - Support multiple input files
 - Add GUI
@@ -211,9 +189,7 @@ Strategy,9
 - Database integration
 - Cloud deployment
 
----
-
-## How to Run
+ How to Run
 
 Open the project folder in VS Code.
 
@@ -231,9 +207,7 @@ The final output will be generated inside:
 output/result.txt
 ```
 
----
-
-## Expected Output
+ Expected Output
 
 ```
 Genre,Players
@@ -246,20 +220,14 @@ Sports,10
 Strategy,9
 ```
 
----
-
-## Conclusion
+ Conclusion
 
 This project successfully demonstrates the implementation of a Mini MapReduce Framework using Python for Online Games Analysis. It follows the complete MapReduce workflow including data splitting, mapping, partitioning, sorting, and reducing. The project can be further extended for large-scale gaming datasets and distributed computing environments such as Hadoop.
 
----
+ Developed By
 
-## Developed By
-
-Name : _______________________
+Name : _B.BalaHarini______________________
 
 Department : Bachelor of Computer Applications (BCA)
 
-Course : Big Data Analytics
-
-Academic Year : 2026
+Academic Project : Mini MapReduce Framework using Python
