@@ -1,0 +1,7 @@
+Genre,Players
+Battle Royale,3
+FPS,2
+RPG,1
+Sandbox,2
+Sports,1
+Strategy,1
